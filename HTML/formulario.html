@@ -9,9 +9,15 @@
 	<title>Menu</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../CSS/estilos.css">
+    <link rel="stylesheet" href="../CSS/formulario.css">
     <link rel="stylesheet" href="../fonts.css.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/jquery-ui.min.css">
 	<script src="http://code.jquery.com/jquery.js"></script>
-	<script src="../JS/main.js"></script>
+    <script src="../JS/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="../JS/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../JS/jquery-ui.min.js"></script>
 </head>
 <body>
 	
@@ -24,7 +30,7 @@
 			<ul>
 				<li><a href="index.html"><span class="icon-home"></span>Inicio</a></li>
 				<li class="submenu">
-					<a href="#"><span class="icon-user"></span>Acerca de Nosotros<span class="caret icon-circle-down"></span></a>
+					<a href="#"><span class="icon-user"></span>Conócenos<span class="caret icon-circle-down"></span></a>
 					<ul class="children">
 						<li><a href="#">Quiénes Somos <span class="icon-dot"></span></a></li>
 						<li><a href="#">Historia<span class="icon-dot"></span></a></li>
@@ -59,7 +65,74 @@
 				<li><a href="#"><span class="icon-mobile"></span>Contacto</a></li>
 			</ul>
 		</nav>
-	</header>
+    </header>
+    <form id="mi-formulario" action="#">
 
+
+        <label>Correo Electrónico: </label>
+        <input type="email" name="email" required placeholder="nombre@dominio.com">
+      
+        <label>Run:</label>
+        <input type="number" name="run" required placeholder="Sin punto ni guión" minlength="9" maxlength="12">
+      
+        <label>Nombre Completo: </label>
+        <input type="text" name="nombre" minlength="20" maxlength="100">
+
+        <label>Fecha de Nacimiento: </label>
+        <input type="text" id="datepicker">
+
+        <label>Teléfono de contacto: </label>
+        <input type="number" name="teléfono" required placeholder="11223344" minlength="6" maxlength="8">
+
+        <label>Región: </label>
+        <select name="region">
+            <option selected></option>
+            <option>Aisén del G. Carlos Ibáñez del Campo.</option>
+            <option>Antofagasta.</option>
+            <option>Arica y Parinacota. </option>
+            <option>Atacama.</option>
+            <option>Biobío.</option>
+            <option>Coquimbo.</option>
+            <option>La Araucanía.</option>
+            <option>Libertador General Bernardo O’Higgins.</option>
+            <option>Los Lagos.</option>
+            <option>Los Ríos.</option>
+            <option>Magallanes y de la Antártica Chilena.</option>
+            <option>Maule.</option>
+            <option>Metropolitana de Santiago.</option>
+            <option>Ñuble.</option>
+            <option>Tarapacá.</option>
+            <option>Valparaíso.</option>
+    
+        </select>
+        <label>Ciudad: </label>
+        <select name="valpo">
+            <option selected>       </option>
+            <option>Valparaíso</option>
+            <option>Viña del Mar</option>
+            <option>Qulpué</option>
+            <option>Villa Alemana</option>
+            <option>Limache</option>
+            <option>Quintero</option>
+            <option>Quillota</option>
+            <option>Los Andes</option>
+        </select>
+                                   
+        <label>Dispositivo de preferencia: </label>
+        
+        <label>Computador </label>
+        <input type="checkbox" name="computer">
+
+        <label>Teléfono </label>
+        <input type="checkbox" name="phone">
+
+        <label>Tablet </label>
+        <input type="checkbox" name="tablet">
+      
+        <button>Enviar</button>
+      </form>
+<script>
+    $("#datepicker").datepicker();
+</script>
 </body>
 </html>
