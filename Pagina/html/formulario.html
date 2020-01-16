@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="fonts.css.css">
+    <link rel="stylesheet" href="../css/jquery.lightbox.min.css">
+    <link rel="stylesheet" href="../css/formulario.css">
+    <link rel="stylesheet" type="" href="../css/slick.css"/>
+	<link rel="stylesheet" type="" href="../css/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css">
+    
+
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="../js/main.js"></script>
+    <script src="../js/lightbox-plus-jquery.min.js"></script>
+	<script src="../js/validarut.js"></script>
+	<script src="../js/reg.js"></script>
+    <title>Bomberos</title>
+          
+
+</head>
+
+<body>
+
+	<header>
+		<div>
+			<h1>1 COMPAÑÍA DE BOMBEROS DE QUILPUÉ</h1>
+		</div>
+		<div class="menu_bar">
+			<a href="#" class="bt-menu"><span class="icon-menu"></span>Menú</a>
+		</div>
+ 
+		<nav>
+			<ul>
+				<li><a href="index.html"><span class="icon-home"></span>Inicio</a></li>
+				<li class="submenu">
+					<a href="#"><span class="icon-user"></span>Acerca de Nosotros<span class="caret icon-circle-down"></span></a>
+					<ul class="children">
+						<li><a href="#">Quiénes Somos <span class="icon-dot"></span></a></li>
+						<li><a href="#">Historia<span class="icon-dot"></span></a></li>
+						<li><a href="#">Comunidad<span class="icon-dot"></span></a></li>
+						<li><a href="../html/galeria.html">Galeria<span class="icon-dot"></span></a></li>
+					</ul>
+				</li>
+
+				<li class="submenu">
+					<a href="#"><span class="icon-coin-dollar"></span>Donaciones<span class="caret icon-circle-down"></span></a>
+					<ul class="children">
+						<li><a href="#">Hazte Socio<span class="icon-dot"></span></a></li>
+						<li><a href="#">Ley de Donaciones<span class="icon-dot"></span></a></li>
+					</ul>
+				</li>
+				<li class="submenu">
+					 <a href="#"><span class="icon-newspaper"></span>Noticias<span class="caret icon-circle-down"></span></a>
+					 <ul class="children">
+						<li><a href="#">Emergencias<span class="icon-dot"></span></a></li>
+						<li><a href="#">Consejos<span class="icon-dot"></span></a></li>
+						<li><a href="../html/galeria.html">Fotos<span class="icon-dot"></span></a></li>
+					</ul>
+				</li>
+				<li class="submenu">
+					<a href="#"><span class="icon-file-text2"></span>Postulaciones<span class="caret icon-circle-down"></span></a>
+					<ul class="children">
+						<li><a href="#">Fechas de Postulación<span class="icon-dot"></span></a></li>
+						<li><a href="../html/formulario.html">Formulario de Postulación<span class="icon-dot"></span></a></li>
+						<li><a href="#">Resultados<span class="icon-dot"></span></a></li>
+					</ul>
+				</li>
+				<li><a href="#"><span class="icon-mobile"></span>Contacto</a></li>
+			</ul>
+		</nav>
+	</header>
+
+</section>
+<a name="final"></a>
+<section id="formu">
+
+	<form action="/action_page.php" name="formulario" method="POST" onsubmit="javascript:return Rut(document.formulario.rut.value)">
+		<h2>FORMULARIO DE POSTULACIÓN</h2>
+		<br>
+		<label class="leb"  for="correo" >Email:</label>
+		<br>
+		<input type="email" id="correo" name="correo" required placeholder="Ejemplo@hotmail.com">
+		<br>
+		<label class="leb" for="rut">Rut:</label>
+		<br>
+		<input type="text" id="rut" name="rut" required placeholder="12345678-9">
+		<br>
+		<label class="leb" for="nombre">Nombre:</label>
+		<br>
+		<input type="text" id="nombre" name="nombre" required placeholder="Nombre Completo">
+		<br>
+		<label class="leb" for="fecha">Fecha:</label>
+		<br>
+		<input type="text" id="datepicker">
+		<br>
+		<label class="leb" for="telefono-2">Telefono:</label>
+		<br>
+		<input type="number" id="telefono-2" required maxlength="8" title="Numero de 8 Cifras" name="telefono" placeholder="Numero Telefonico">
+		<br>
+		<label class="leb" for="regiones">Region:</label>
+		<br>
+		<select name="region" id="region" onchange="buscar_ciudad()">
+            <option value="0" selected="selected">Regiones</option>
+            <option value="1">1 Tarapaca</option>
+            <option value="2">2 Antofagasta</option>
+            <option value="3">3 Atacama</option>
+            <option value="4">4 Coquimbo</option>
+            <option value="5">5 Valparaiso</option>
+            <option value="6">6 O'Higgins</option>
+            <option value="7">7 Maule</option>
+            <option value="8">8 Bio - Bio</option>
+            <option value="9">9 Araucania</option>
+            <option value="10">10 Los Lagos</option>
+            <option value="11">11 Aisen</option>
+            <option value="12">12 Magallanes Y Antartica</option>
+            <option value="13">13 Metropolitana</option>
+            <option value="14">14 Los Rios</option>
+            <option value="15">15 Arica y Parinacota</option>
+         </select>
+           <!-- <select name="comuna" id="comuna">
+            <option value="0">Comunas por Region</option>
+        </select>-->
+		<br>
+		<label class="leb" for="comunas">Comuna:</label>
+		<br>
+		<select name="comuna" id="comunas" ></select>
+		<br>
+		<label class="leb" for= "disp">Dispositivo de preferencia: </label>
+		<br>
+
+		<br>
+        <label class="leb" for= "comp">Computador </label>
+        <input type="checkbox" id="computer">
+
+        <label class="leb" for= "tel">Teléfono </label>
+        <input type="checkbox" name="phone">
+
+        <label class="leb" for= "tablet">Tablet </label>
+        <input type="checkbox" name="tablet">
+		<br>
+        
+		<button type="submit" id="btn" name="btn" class="btt" value="Enviar">Enviar</button>
+    </form>
+
+	<script>
+		(function () {
+			var formulario = document.getElementsByName('formulario')[0],
+				elementos = formulario.elements,
+				boton = document.getElementById('btn');
+
+			var validarNombre = function (e) {
+				if (formulario.nombre.value.length < 5) {
+					alert("Campo nombre min 6 caracteres");
+					e.preventDefault();
+				}
+
+			};
+			var validarTelefono = function (e) {
+				if (formulario.telefono.value.length != "8") {
+					alert("Telefono 8 caracteres exacto");
+					e.preventDefault();
+				}
+			};
+
+			var validarRegion = function (e) {
+				if (formulario.region.value == "sin-region") {
+					alert("Seleccione una region");
+					e.preventDefault();
+				}
+			};
+			var validarComuna = function (e) {
+				if (formulario.comuna.value == "sin-comuna") {
+					alert("Seleccione una comuna");
+					e.preventDefault();
+				}
+			};
+			
+
+
+
+
+			var validar = function (e) {
+				validarNombre(e);
+				validarTelefono(e);
+				validarRegion(e);
+				validarComuna(e);
+				
+
+			};
+
+
+
+			formulario.addEventListener("submit", validar);
+
+		}())
+	</script>
+
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+
+</section>
+    <script>
+        $("#datepicker").datepicker();
+    </script>
+	
+</body>
+	<footer>
+		<p>Desarrollo web y Mobile</p>
+	</footer>
+
+</html>
